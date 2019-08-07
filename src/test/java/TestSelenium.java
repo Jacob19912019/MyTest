@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -8,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestSelenium {
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeMethod
     public void openBrowser(){
@@ -22,11 +21,11 @@ public class TestSelenium {
 
         driver.get("http://www.baidu.com/");
         System.out.println(driver.getTitle());
-        driver.findElement(By.id("kw")).sendKeys("Selenium");
+        driver.findElement(By.id("kw")).sendKeys("selenium");
         driver.findElement(By.id("su")).click();
-        Thread.sleep(5000);
-        String expect = driver.findElement(By.xpath(".//*[@id='3001']/div[1]/h3/a/font[2]")).getText();
-        Assert.assertEquals("selenium",expect);
+        Thread.sleep(8000);
+        String expect = driver.getTitle();
+        Assert.assertEquals("selenium_百度搜索",expect);
 
     }
 
