@@ -33,6 +33,6 @@ public class TestSelenium {
     @AfterMethod
     public void closeBrowser(){
         driver.quit();
-        System.out.println("调用AfterMethod方法");
+        System.out.println("修改调用AfterMethod方法");
         }
 }
